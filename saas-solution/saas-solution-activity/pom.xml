@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>saas-solution</artifactId>
+        <groupId>com.axue</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>saas-solution-activity</artifactId>
+    <name>解决方案-秒杀活动</name>
+
+    <dependencies>
+        <!-- 在dependencies中添加如下依赖 -->
+        <dependency>
+            <groupId>com.axue</groupId>
+            <artifactId>saas-common-starter-orm</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- 整合缓存能力 -->
+        <dependency>
+            <groupId>com.axue</groupId>
+            <artifactId>saas-common-starter-cache</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- 整合swagger接口文档能力 -->
+        <dependency>
+            <groupId>com.axue</groupId>
+            <artifactId>saas-common-starter-swagger</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- 整合参数校验能力 -->
+        <dependency>
+            <groupId>com.axue</groupId>
+            <artifactId>saas-common-starter-validate</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- 整合日志能力 -->
+        <dependency>
+            <groupId>com.axue</groupId>
+            <artifactId>saas-common-starter-log</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- 核心代码 -->
+        <dependency>
+            <groupId>com.axue</groupId>
+            <artifactId>saas-common-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- RPC -->
+        <dependency>
+            <groupId>com.axue</groupId>
+            <artifactId>saas-rpc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

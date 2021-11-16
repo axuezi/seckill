@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>saas-common-dependencies</artifactId>
+        <groupId>com.axue</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>saas-common-dependencies-springcloud-alibaba</artifactId>
+    <name>通用--工程依赖管理--集成SpringCloudAlibaba相关依赖(saas-common-dependencies-springcloud-alibaba)</name>
+    <packaging>pom</packaging>
+
+    <!-- 统一管理版本号 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.compilerVersion>${java.version}</maven.compiler.compilerVersion>
+        <springboot.version>2.3.2.RELEASE</springboot.version>
+        <springcloud.version>Hoxton.SR8</springcloud.version>
+        <springcloud-alibaba.version>2.2.5.RELEASE</springcloud-alibaba.version>
+        <spring-boot-maven-plugin.version>2.2.8.RELEASE</spring-boot-maven-plugin.version>
+    </properties>
+
+    <!--
+        依赖管理(这里不会直接导包,只是声明了包的版本,子模块要导包需要显式导包)
+        主要作用是锁定依赖包的版本,如非必要,子模块要导包只需要写依赖包的groupId和artifactId,不需要写version版本,version版本由父工程统一管理
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- springboot所有的相关依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- springcloud所有的相关依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- springcloud-alibaba所有的相关依赖管理 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${springcloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

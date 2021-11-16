@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: saas-solution-product # 应用名,一般和代码工程名一致
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 指定注册中心nacos的地址
+        password: nacos
+        username: nacos
+        namespace: public # 指定注册中心命名空间
+        metadata:
+          chinese-name: '解决方案--商品'
+      config:
+        server-addr: localhost:8848  # 指定配置中心nacos的地址
+        namespace: public # 指定配置中心命名空间
+        file-extension: yml # 指定配置文件的格式是yml
+        shared-configs:
+          - data-id: common.yml # 在不同环境下的公共配置
+            refresh: true # 是否动态刷新
+
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN

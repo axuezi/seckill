@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>saas-common</artifactId>
+        <groupId>com.axue</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>saas-common-starter</artifactId>
+    <name>通用--场景能力集成模块(saas-common-starter)</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>saas-common-starter-orm</module>
+        <module>saas-common-starter-log</module>
+        <module>saas-common-starter-swagger</module>
+        <module>saas-common-starter-cache</module>
+        <module>saas-common-starter-validate</module>
+        <module>saas-common-starter-kafka</module>
+        <module>saas-common-starter-elastic-search</module>
+        <module>saas-common-starter-rocketmq</module>
+        <module>saas-common-starter-auth</module>
+        <module>saas-common-starter-schedule</module>
+    </modules>
+
+</project>

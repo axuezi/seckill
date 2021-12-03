@@ -1,20 +1,20 @@
 // 公共
-env.registry = "harbor.space.com"  // 镜像仓库地址
+env.registry = ""  // 镜像仓库地址
 
 // 项目
 env.imageTag = new Date().format('yyyyMMddHHmm')
-env.project = "iot"  // 镜像仓库
+env.project = ""  // 镜像仓库
 env.app_name = params.module  // 镜像
 env.image_name = "${registry}/${project}/"
-def git_address = "http://172.16.163.22/space-iot/space-iot.git"   // gitlab仓库
-def chart_address = "http://gitlab.space.com/devops/chart.git"  // char仓库
+def git_address = ""   // gitlab仓库
+def chart_address = ""  // char仓库
 env.devops_path = "./devops/deploy"        // dockerfile路径
 
 // 认证
-env.secret_name = "harbor"    //保存在k8s上的harbor secret
-def docker_registry_auth = "15ddb84c-7be1-4c24-b9a4-55f8ce141824"  // 连接docker镜像仓库的凭据
-def git_auth = "ac17e789-173f-4858-a916-9b6fe250c3e6"          // 连接git仓库的凭据
-def k8s_auth = "6c8fa9ab-8c80-478e-8bef-705786b54625"   // 连接k8s的凭据
+env.secret_name = ""    //保存在k8s上的harbor secret
+def docker_registry_auth = ""  // 连接docker镜像仓库的凭据
+def git_auth = ""          // 连接git仓库的凭据
+def k8s_auth = ""   // 连接k8s的凭据
 
 //参数
 env.Namespace = params.Namespace
